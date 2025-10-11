@@ -7,7 +7,7 @@ import react from "@vitejs/plugin-react-swc";
 const keyPath = "./certs/localhost+3-key.pem";
 const certPath = "./certs/localhost+3.pem";
 
-// Only use HTTPS if certs exist
+// Only enable HTTPS if certs exist
 const httpsOptions =
   fs.existsSync(keyPath) && fs.existsSync(certPath)
     ? { key: fs.readFileSync(keyPath), cert: fs.readFileSync(certPath) }
@@ -21,8 +21,6 @@ export default defineConfig({
   },
   plugins: [react()],
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+    alias: { "@": path.resolve(__dirname, "./src") },
   },
 });

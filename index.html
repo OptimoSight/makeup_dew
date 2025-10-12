@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LUXA Cosmetics - Premium Beauty Products</title>
-    <meta name="description" content="Shop premium cosmetics for face, lips, cheeks, and eyes. Cruelty-free beauty with 100% money-back guarantee." />
+    <meta
+      name="description"
+      content="Shop premium cosmetics for face, lips, cheeks, and eyes. Cruelty-free beauty with 100% money-back guarantee."
+    />
     <meta name="author" content="LUXA Cosmetics" />
 
     <meta property="og:title" content="LUXA Cosmetics - Premium Beauty Products" />
-    <meta property="og:description" content="Shop premium cosmetics for face, lips, cheeks, and eyes. Cruelty-free beauty with 100% money-back guarantee." />
+    <meta
+      property="og:description"
+      content="Shop premium cosmetics for face, lips, cheeks, and eyes. Cruelty-free beauty with 100% money-back guarantee."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
@@ -16,19 +22,35 @@
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- ✅ VTO Widget CSS -->
-    <link rel="stylesheet" href="https://192.168.50.148:42413/static/css/vto-widget.css">
-    <!-- <link rel="stylesheet" href="https://192.168.0.111:42413/static/css/vto-widget.css"> -->
+    <!-- ✅ Dynamically load VTO CSS -->
+    <script type="module">
+      const isLocal = location.hostname === "localhost" || /192\.168|10\./.test(location.hostname);
+      const vtoBaseUrl = isLocal
+        ? `https://${location.hostname}:42413`
+        : "https://optimo-manager-backend.onrender.com";
 
+      // Save globally so other scripts can access
+      window.VTO_BASE_URL = vtoBaseUrl;
+
+      const css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = `${vtoBaseUrl}/static/css/vto-widget.css`;
+      document.head.appendChild(css);
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
 
-    <!-- ✅ VTO Widget JS -->
-    <script src="https://192.168.50.148:42413/static/js/vto-widget.js"></script>
-    <!-- <script src="https://192.168.0.111:42413/static/js/vto-widget.js"></script> -->
+    <!-- ✅ Dynamically load VTO JS -->
+    <script type="module">
+      const vtoUrl = window.VTO_BASE_URL;
+      const script = document.createElement("script");
+      script.src = `${vtoUrl}/static/js/vto-widget.js`;
+      document.body.appendChild(script);
+    </script>
 
+    <!-- Your app entry -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

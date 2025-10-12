@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20 # Updated to latest LTS for compatibility
+          node-version: 20 # Use latest LTS for compatibility
           cache: 'npm'
 
       - name: Install dependencies
@@ -28,12 +28,12 @@ jobs:
       - name: Build Vite app
         run: npm run build
 
-      - name: List dist folder contents # Debugging step
-        run: ls -la dist
+      - name: List dist folder contents
+        run: ls -la dist # Debugging step to verify output
 
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          force_orphan: true # Ensures a clean gh-pages branch
+          force_orphan: true # Overwrite gh-pages branch

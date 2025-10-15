@@ -30,6 +30,17 @@ import lipsBlush from "@/assets/lips-blush.jpg";
 import lipsLipPencil from "@/assets/lips-lip-pencil.jpg";
 import lipsLipGloss from "@/assets/lips-lip-gloss.jpg";
 import lipsLipBalm from "@/assets/lips-lip-balm.jpg";
+import lipstick1 from "@/assets/lipstick-1.jpg";
+import lipstick2 from "@/assets/lipstick-2.jpg";
+import lipstick3 from "@/assets/lipstick-3.jpg";
+import lipstick4 from "@/assets/lipstick-4.jpg";
+import lipstick5 from "@/assets/lipstick-5.jpg";
+import lipstick6 from "@/assets/lipstick-6.jpg";
+import lipstick7 from "@/assets/lipstick-7.jpg";
+import lipstick8 from "@/assets/lipstick-8.jpg";
+import lipstick9 from "@/assets/lipstick-9.jpg";
+import lipstick10 from "@/assets/lipstick-10.jpg";
+
 
 // Sets products
 import setsPerfectBase from "@/assets/sets-perfect-base.jpg";
@@ -165,6 +176,17 @@ const Index = () => {
       color: "#792F24",
       colorName: "Ruby Red"
     },
+
+    {
+      id: 30,
+      category: "lipstick",
+      image: lipstick9,
+      title: "Matte Lipstick - Fuchsia Flash",
+      price: 30.0,
+      color: "#975166",
+      colorName: "Fuchsia Flash"
+    },
+
     {
       id: 15,
       category: "lipstick",
@@ -180,6 +202,91 @@ const Index = () => {
       image: lipsLipBalm,
       title: "Nourishing Lip Balm",
       price: 18.0
+    },
+    {
+      id: 22,
+      category: "lipstick",
+      image: lipstick1,
+      title: "Matte Lipstick - Crimson Red",
+      price: 30.0,
+      color: "#97403D",
+      colorName: "Crimson Red"
+    },
+    {
+      id: 23,
+      category: "lipstick",
+      image: lipstick2,
+      title: "Matte Lipstick - Berry Pink",
+      price: 30.0,
+      color: "#BC0C2A",
+      colorName: "Berry Pink"
+    },
+
+    {
+      id: 25,
+      category: "lipstick",
+      image: lipstick4,
+      title: "Matte Lipstick - Coral Crush",
+      price: 30.0,
+      color: "#6E373E",
+      colorName: "Coral Crush"
+    },
+    
+    {
+      id: 24,
+      category: "lipstick",
+      image: lipstick3,
+      title: "Matte Lipstick - Soft Rose",
+      price: 30.0,
+      color: "#E74846",
+      colorName: "Soft Rose"
+    },
+
+    {
+      id: 26,
+      category: "lipstick",
+      image: lipstick5,
+      title: "Matte Lipstick - Plum Passion",
+      price: 30.0,
+      color: "#F4A793",
+      colorName: "Plum Passion"
+    },
+    {
+      id: 27,
+      category: "lipstick",
+      image: lipstick6,
+      title: "Matte Lipstick - Ruby Red",
+      price: 30.0,
+      color: "#860619",
+      colorName: "Ruby Red"
+    },
+    {
+      id: 28,
+      category: "lipstick",
+      image: lipstick7,
+      title: "Matte Lipstick - Nude Beige",
+      price: 30.0,
+      color: "#D16564",
+      colorName: "Nude Beige"
+    },
+    {
+      id: 29,
+      category: "lipstick",
+      image: lipstick8,
+      title: "Matte Lipstick - Chocolate Brown",
+      price: 30.0,
+      color: "#9B221F",
+      colorName: "Chocolate Brown"
+    },
+
+    {
+      id: 31,
+      category: "lipstick",
+      image: lipstick10,
+      title: "Matte Lipstick - Tangerine Tango",
+      price: 30.0,
+      color: "#B70917",
+      colorName: "Tangerine Tango"
     },
 
     // SETS CATEGORY
@@ -375,3 +482,4 @@ const Index = () => {
 };
 
 export default Index;
+

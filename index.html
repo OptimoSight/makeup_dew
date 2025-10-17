@@ -27,7 +27,7 @@
       const isLocal = location.hostname === "localhost" || /192\.168|10\./.test(location.hostname);
       const vtoBaseUrl = isLocal
         ? `https://${location.hostname}:42413`
-        : "https://103.174.51.143:42413";
+        : "http://103.174.51.143:42413";
 
       // Save globally so other scripts can access
       window.VTO_BASE_URL = vtoBaseUrl;

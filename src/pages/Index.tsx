@@ -155,8 +155,8 @@ const Index = () => {
       image: lipsLipstick,
       title: "Velvet Dream Lipstick",
       price: 30.0,
-      color: "#A6191F",
-      colorName: "Rose Pink"
+      colors: ["#A6191F", "#BC0C2A", "#E74846", "#6E373E", "#F4A793"],
+      colorNames: ["Rose Pink", "Berry Pink", "Soft Rose", "Coral Crush", "Plum Passion"]
     },
     {
       id: 13,
@@ -164,8 +164,8 @@ const Index = () => {
       image: lipsBlush,
       title: "Vibrant Cheeks Liquid Blush",
       price: 30.0,
-      color: "#BB5B42",
-      colorName: "Coral Blush"
+      colors: ["#BB5B42", "#FF6B6B", "#FF8E8E"],
+      colorNames: ["Coral Blush", "Pink Blush", "Soft Pink"]
     },
     {
       id: 14,
@@ -173,28 +173,26 @@ const Index = () => {
       image: lipsLipPencil,
       title: "Signature Lip Pencil",
       price: 24.0,
-      color: "#792F24",
-      colorName: "Ruby Red"
+      colors: ["#792F24", "#5C1F1A", "#8B3A35"],
+      colorNames: ["Ruby Red", "Deep Red", "Burgundy"]
     },
-
     {
       id: 30,
       category: "lipstick",
       image: lipstick9,
       title: "Matte Lipstick - Fuchsia Flash",
       price: 30.0,
-      color: "#975166",
-      colorName: "Fuchsia Flash"
+      colors: ["#975166", "#B76E8A", "#D48FB1"],
+      colorNames: ["Fuchsia Flash", "Deep Fuchsia", "Light Fuchsia"]
     },
-
     {
       id: 15,
       category: "lipstick",
       image: lipsLipGloss,
       title: "Plush Lip Gloss",
       price: 26.0,
-      color: "#C94F44",
-      colorName: "Pink Gloss"
+      colors: ["#C94F44", "#FF6B8B", "#FFA8A8"],
+      colorNames: ["Pink Gloss", "Berry Gloss", "Nude Gloss"]
     },
     {
       id: 16,
@@ -231,7 +229,7 @@ const Index = () => {
       color: "#6E373E",
       colorName: "Coral Crush"
     },
-    
+
     {
       id: 24,
       category: "lipstick",

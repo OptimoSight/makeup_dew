@@ -1,3 +1,4 @@
+// ProductCard.tsx
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import TryOnButton from "@/components/TryOnButton";
@@ -10,8 +11,10 @@ export interface ProductCardProps {
   price: number;
   originalPrice?: number;
   badge?: "NEW" | "BESTSELLER" | "SALE";
-  color?: string;
-  colorName?: string;
+  color?: string; // Single color for backward compatibility
+  colorName?: string; // Single color name for backward compatibility
+  colors?: string[]; // Array of color hex codes
+  colorNames?: string[]; // Array of color names
 }
 
 export const ProductCard = ({
@@ -23,10 +26,16 @@ export const ProductCard = ({
   badge,
   color,
   colorName,
+  colors,
+  colorNames,
 }: ProductCardProps) => {
   const discount = originalPrice
     ? Math.round(((originalPrice - price) / originalPrice) * 100)
     : 0;
+
+  // Use arrays if provided, otherwise fall back to single color
+  const productColors = colors || (color ? [color] : []);
+  const productColorNames = colorNames || (colorName ? [colorName] : []);
 
   return (
     <div className="group">
@@ -54,13 +63,13 @@ export const ProductCard = ({
         )}
 
         {/* Try-On button on top-right */}
-        {color && colorName && (
+        {productColors.length > 0 && (
           <div className="absolute top-2 right-2">
             <TryOnButton
               category={category}
               productName={title}
-              color={color}
-              colorName={colorName}
+              colors={productColors}
+              colorNames={productColorNames}
               className="text-xs px-2 py-1 bg-red-500 text-white rounded-sm hover:bg-red-600 transition"
             />
           </div>
@@ -70,6 +79,20 @@ export const ProductCard = ({
       {/* Product Info */}
       <div className="space-y-2">
         <h3 className="text-sm font-medium uppercase tracking-wide">{title}</h3>
+
+        {/* Color Swatches */}
+        {productColors.length > 0 && (
+          <div className="flex gap-1 flex-wrap">
+            {productColors.map((color, index) => (
+              <div
+                key={index}
+                className="w-4 h-4 rounded-full border border-gray-300"
+                style={{ backgroundColor: color }}
+                title={productColorNames[index] || `Color ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
 
         <div className="flex items-center gap-2">
           <span className="text-base font-semibold">${price.toFixed(2)} USD</span>

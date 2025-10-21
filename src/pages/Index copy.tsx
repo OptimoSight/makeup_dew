@@ -17,20 +17,6 @@ import eyesShimmerStick from "@/assets/eyes-shimmer-stick.jpg";
 import eyesMascara from "@/assets/eyes-mascara.jpg";
 import eyesBrowDuo from "@/assets/eyes-brow-duo.jpg";
 
-// Eyeshadow products
-import eyeshadowSingle1 from "@/assets/eyeshadow-single-1.jpg";
-import eyeshadowSingle2 from "@/assets/eyeshadow-single-2.jpg";
-import eyeshadowSingle3 from "@/assets/eyeshadow-single-3.jpg";
-import eyeshadowDouble1 from "@/assets/eyeshadow-double-1.jpg";
-import eyeshadowDouble2 from "@/assets/eyeshadow-double-2.jpg";
-import eyeshadowDouble3 from "@/assets/eyeshadow-double-3.jpg";
-import eyeshadowTriple1 from "@/assets/eyeshadow-triple-1.jpg";
-import eyeshadowTriple2 from "@/assets/eyeshadow-triple-2.jpg";
-import eyeshadowTriple3 from "@/assets/eyeshadow-triple-3.jpg";
-import eyeshadowQuad1 from "@/assets/eyeshadow-quad-1.jpg";
-import eyeshadowQuad2 from "@/assets/eyeshadow-quad-2.jpg";
-import eyeshadowQuad3 from "@/assets/eyeshadow-quad-3.jpg";
-
 // Face products
 import faceFoundation from "@/assets/face-foundation.jpg";
 import facePrimer from "@/assets/face-primer.jpg";
@@ -55,6 +41,7 @@ import lipstick8 from "@/assets/lipstick-8.jpg";
 import lipstick9 from "@/assets/lipstick-9.jpg";
 import lipstick10 from "@/assets/lipstick-10.jpg";
 
+
 // Sets products
 import setsPerfectBase from "@/assets/sets-perfect-base.jpg";
 import setsBrowDefining from "@/assets/sets-brow-defining.jpg";
@@ -66,7 +53,7 @@ const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const products = [
-    // EYES CATEGORY - Original Products
+    // EYES CATEGORY
     {
       id: 1,
       category: "eyeshadow",
@@ -108,129 +95,6 @@ const Index = () => {
       image: eyesMascara,
       title: "Mini Mascara",
       price: 16.0
-    },
-
-    // EYESHADOW PALETTES - Single Shade
-    {
-      id: 32,
-      category: "eyeshadow",
-      image: eyeshadowSingle1,
-      title: "Single Eyeshadow - Rose Gold",
-      price: 22.0,
-      badge: "NEW" as const,
-      color: "#d4a59a",
-      colorName: "Rose Gold"
-    },
-    {
-      id: 33,
-      category: "eyeshadow",
-      image: eyeshadowSingle2,
-      title: "Single Eyeshadow - Deep Bronze",
-      price: 22.0,
-      color: "#cd7f32",
-      colorName: "Deep Bronze"
-    },
-    {
-      id: 34,
-      category: "eyeshadow",
-      image: eyeshadowSingle3,
-      title: "Single Eyeshadow - Champagne Shimmer",
-      price: 22.0,
-      badge: "BESTSELLER" as const,
-      color: "#f7e7ce",
-      colorName: "Champagne"
-    },
-
-    // EYESHADOW PALETTES - Double Shade
-    {
-      id: 35,
-      category: "eyeshadow",
-      image: eyeshadowDouble1,
-      title: "Duo Eyeshadow - Peach & Copper",
-      price: 32.0,
-      colors: ["#ffd4a3", "#b87333"],
-      colorNames: ["Peach", "Copper"]
-    },
-    {
-      id: 36,
-      category: "eyeshadow",
-      image: eyeshadowDouble2,
-      title: "Duo Eyeshadow - Burgundy & Gold",
-      price: 32.0,
-      badge: "BESTSELLER" as const,
-      colors: ["#800020", "#ffd700"],
-      colorNames: ["Burgundy", "Gold"]
-    },
-    {
-      id: 37,
-      category: "eyeshadow",
-      image: eyeshadowDouble3,
-      title: "Duo Eyeshadow - Lavender & Silver",
-      price: 32.0,
-      colors: ["#e6e6fa", "#c0c0c0"],
-      colorNames: ["Lavender", "Silver"]
-    },
-
-    // EYESHADOW PALETTES - Triple Shade
-    {
-      id: 38,
-      category: "eyeshadow",
-      image: eyeshadowTriple1,
-      title: "Trio Eyeshadow - Nude Collection",
-      price: 42.0,
-      badge: "BESTSELLER" as const,
-      colors: ["#f5deb3", "#d2b48c", "#8b4513"],
-      colorNames: ["Nude", "Taupe", "Chocolate"]
-    },
-    {
-      id: 39,
-      category: "eyeshadow",
-      image: eyeshadowTriple2,
-      title: "Trio Eyeshadow - Rose Collection",
-      price: 42.0,
-      colors: ["#ffb6c1", "#dda0dd", "#9370db"],
-      colorNames: ["Rose", "Mauve", "Plum"]
-    },
-    {
-      id: 40,
-      category: "eyeshadow",
-      image: eyeshadowTriple3,
-      title: "Trio Eyeshadow - Sunset Collection",
-      price: 42.0,
-      badge: "NEW" as const,
-      colors: ["#ff7f50", "#cd7f32", "#d2691e"],
-      colorNames: ["Coral", "Bronze", "Terracotta"]
-    },
-
-    // EYESHADOW PALETTES - Quad (4 Shades)
-    {
-      id: 41,
-      category: "eyeshadow",
-      image: eyeshadowQuad1,
-      title: "Quad Eyeshadow - Neutral Essentials",
-      price: 48.0,
-      badge: "BESTSELLER" as const,
-      colors: ["#fff8dc", "#ffd700", "#cd7f32", "#654321"],
-      colorNames: ["Cream", "Gold", "Bronze", "Deep Brown"]
-    },
-    {
-      id: 42,
-      category: "eyeshadow",
-      image: eyeshadowQuad2,
-      title: "Quad Eyeshadow - Berry Bliss",
-      price: 48.0,
-      colors: ["#ffc0cb", "#ff69b4", "#dc143c", "#800020"],
-      colorNames: ["Pink", "Rose Gold", "Burgundy", "Deep Plum"]
-    },
-    {
-      id: 43,
-      category: "eyeshadow",
-      image: eyeshadowQuad3,
-      title: "Quad Eyeshadow - Earthy Tones",
-      price: 48.0,
-      badge: "NEW" as const,
-      colors: ["#f0e68c", "#b87333", "#808000", "#2f4f4f"],
-      colorNames: ["Champagne", "Copper", "Olive", "Charcoal"]
     },
 
     // FACE CATEGORY
@@ -355,6 +219,7 @@ const Index = () => {
       color: "#BC0C2A",
       colorName: "Berry Pink"
     },
+
     {
       id: 25,
       category: "lipstick",
@@ -364,6 +229,7 @@ const Index = () => {
       color: "#6E373E",
       colorName: "Coral Crush"
     },
+
     {
       id: 24,
       category: "lipstick",
@@ -373,6 +239,7 @@ const Index = () => {
       color: "#E74846",
       colorName: "Soft Rose"
     },
+
     {
       id: 26,
       category: "lipstick",
@@ -409,6 +276,7 @@ const Index = () => {
       color: "#9B221F",
       colorName: "Chocolate Brown"
     },
+
     {
       id: 31,
       category: "lipstick",
@@ -466,6 +334,8 @@ const Index = () => {
       originalPrice: 115.0
     }
   ];
+
+
 
   const filteredProducts = selectedCategory === "all"
     ? products
@@ -610,3 +480,4 @@ const Index = () => {
 };
 
 export default Index;
+

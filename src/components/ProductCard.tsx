@@ -1,4 +1,3 @@
-// ProductCard.tsx
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import TryOnButton from "@/components/TryOnButton";
@@ -11,10 +10,10 @@ export interface ProductCardProps {
   price: number;
   originalPrice?: number;
   badge?: "NEW" | "BESTSELLER" | "SALE";
-  color?: string; // Single color for backward compatibility
-  colorName?: string; // Single color name for backward compatibility
-  colors?: string[]; // Array of color hex codes
-  colorNames?: string[]; // Array of color names
+  color?: string;
+  colorName?: string;
+  colors?: string[];
+  colorNames?: string[];
 }
 
 export const ProductCard = ({
@@ -83,12 +82,12 @@ export const ProductCard = ({
         {/* Color Swatches */}
         {productColors.length > 0 && (
           <div className="flex gap-1 flex-wrap">
-            {productColors.map((color, index) => (
+            {productColors.map((c, idx) => (
               <div
-                key={index}
+                key={idx}
                 className="w-4 h-4 rounded-full border border-gray-300"
-                style={{ backgroundColor: color }}
-                title={productColorNames[index] || `Color ${index + 1}`}
+                style={{ backgroundColor: c }}
+                title={productColorNames[idx] || `Color ${idx + 1}`}
               />
             ))}
           </div>
@@ -109,7 +108,7 @@ export const ProductCard = ({
         </div>
 
         {/* Add to Bag */}
-        <Button variant="bag" className="w-full">
+        <Button variant="default" className="w-full">
           Add to Bag
         </Button>
       </div>

@@ -2,31 +2,18 @@ import fs from "fs";
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-
-const keyPath = "./certs/localhost+3-key.pem";
-const certPath = "./certs/localhost+3.pem";
-
-let httpsOptions: { key: Buffer; cert: Buffer } | undefined;
-
-if (fs.existsSync(keyPath) && fs.existsSync(certPath)) {
-  httpsOptions = {
-    key: fs.readFileSync(keyPath),
-    cert: fs.readFileSync(certPath),
-  };
-}
+import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/makeup_dew/" : "/",
-
   server: {
-    host: "0.0.0.0", // allow LAN access
+    host: "0.0.0.0",
     port: 42414,
-    open: false,
-    https: httpsOptions,
+    https: {
+      key: fs.readFileSync("./certs/localhost+3-key.pem"),
+      cert: fs.readFileSync("./certs/localhost+3.pem"),
+    },
   },
-
-  plugins: [react()],
-
+  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },

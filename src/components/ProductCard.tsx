@@ -4,6 +4,7 @@ import TryOnButton from "@/components/TryOnButton";
 
 export interface ProductCardProps {
   id: number;
+  section: string;
   category: string;
   title: string;
   image: string;

@@ -5,10 +5,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState } from "react";
 
 // Category images
-import styleFace from "@/assets/category-face.jpg";
-import styleLips from "@/assets/category-lips.jpg";
-import styleEyes from "@/assets/category-eyes.jpg";
-import styleSets from "@/assets/category-sets.jpg";
+import categoryFace from "@/assets/category-face.jpg";
+import categoryLips from "@/assets/category-lips.jpg";
+import categoryEyes from "@/assets/category-eyes.jpg";
+import categorySets from "@/assets/category-sets.jpg";
 
 // Eyes products
 import eyesBrowPencil from "@/assets/eyes-brow-pencil.jpg";
@@ -31,63 +31,10 @@ import eyeshadowQuad1 from "@/assets/eyeshadow-quad-1.jpg";
 import eyeshadowQuad2 from "@/assets/eyeshadow-quad-2.jpg";
 import eyeshadowQuad3 from "@/assets/eyeshadow-quad-3.jpg";
 
-// Foundation products
-import foundation1 from "@/assets/foundation-1.jpg";
-import foundation2 from "@/assets/foundation-2.jpg";
-import foundation3 from "@/assets/foundation-3.jpg";
-import foundation4 from "@/assets/foundation-4.jpg";
-import foundation5 from "@/assets/foundation-5.jpg";
-
-// Blush products
-import blush1 from "@/assets/blush-1.jpg";
-import blush2 from "@/assets/blush-2.jpg";
-import blush3 from "@/assets/blush-3.jpg";
-import blush4 from "@/assets/blush-4.jpg";
-import blush5 from "@/assets/blush-5.jpg";
-import blush6 from "@/assets/blush-6.jpg";
-import blush7 from "@/assets/blush-7.jpg";
-import blush8 from "@/assets/blush-8.jpg";
-import blush9 from "@/assets/blush-9.jpg";
-import blush10 from "@/assets/blush-10.jpg";
-
-// Concealer products
-import concealer1 from "@/assets/concealer-1.jpg";
-import concealer2 from "@/assets/concealer-2.jpg";
-import concealer3 from "@/assets/concealer-3.jpg";
-import concealer4 from "@/assets/concealer-4.jpg";
-import concealer5 from "@/assets/concealer-5.jpg";
-import concealer6 from "@/assets/concealer-6.jpg";
-import concealer7 from "@/assets/concealer-7.jpg";
-import concealer8 from "@/assets/concealer-8.jpg";
-import concealer9 from "@/assets/concealer-9.jpg";
-import concealer10 from "@/assets/concealer-10.jpg";
-
-// Contour products
-import contour1 from "@/assets/contour-1.jpg";
-import contour2 from "@/assets/contour-2.jpg";
-import contour3 from "@/assets/contour-3.jpg";
-import contour4 from "@/assets/contour-4.jpg";
-import contour5 from "@/assets/contour-5.jpg";
-import contour6 from "@/assets/contour-6.jpg";
-import contour7 from "@/assets/contour-7.jpg";
-import contour8 from "@/assets/contour-8.jpg";
-import contour9 from "@/assets/contour-9.jpg";
-import contour10 from "@/assets/contour-10.jpg";
-
-// Eyeliner products
-import eyeliner1 from "@/assets/eyeliner-1.jpg";
-import eyeliner2 from "@/assets/eyeliner-2.jpg";
-import eyeliner3 from "@/assets/eyeliner-3.jpg";
-import eyeliner4 from "@/assets/eyeliner-4.jpg";
-import eyeliner5 from "@/assets/eyeliner-5.jpg";
-import eyeliner6 from "@/assets/eyeliner-6.jpg";
-import eyeliner7 from "@/assets/eyeliner-7.jpg";
-import eyeliner8 from "@/assets/eyeliner-8.jpg";
-import eyeliner9 from "@/assets/eyeliner-9.jpg";
-import eyeliner10 from "@/assets/eyeliner-10.jpg";
-
-// Face products (existing)
+// Face products
+import faceFoundation from "@/assets/face-foundation.jpg";
 import facePrimer from "@/assets/face-primer.jpg";
+import faceConcealer from "@/assets/face-concealer.jpg";
 import faceSettingSpray from "@/assets/face-setting-spray.jpg";
 import faceBrush from "@/assets/face-brush.jpg";
 
@@ -116,447 +63,9 @@ import setsLipKit from "@/assets/sets-lip-kit.jpg";
 import setsStarterKit from "@/assets/sets-starter-kit.jpg";
 
 const Index = () => {
-  const [selectedSection, setSelectedSection] = useState<string>("all");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const products = [
-    // FOUNDATION CATEGORY - Multiple Shades
-    {
-      id: 100,
-      section: "face",
-      category: "foundation",
-      image: foundation1,
-      title: "Flawless Finish Foundation",
-      price: 45.0,
-      badge: "BESTSELLER" as const,
-      colors: ["#fef5e7", "#f5d1b2", "#e8b896", "#d4a574", "#bc9563"],
-      colorNames: ["Porcelain", "Ivory", "Beige", "Honey", "Caramel"]
-    },
-    {
-      id: 101,
-      section: "face",
-      category: "foundation",
-      image: foundation2,
-      title: "Luminous Skin Foundation",
-      price: 48.0,
-      badge: "NEW" as const,
-      colors: ["#f8e6d8", "#f1c9a8", "#dcb090", "#c8965d", "#a67c52"],
-      colorNames: ["Fair", "Light", "Medium", "Tan", "Rich"]
-    },
-    {
-      id: 102,
-      category: "foundation",
-      image: foundation3,
-      title: "Matte Perfection Foundation",
-      price: 42.0,
-      colors: ["#fae8d7", "#edc9a3", "#d9a574", "#b8784d", "#8b5a3c"],
-      colorNames: ["Buff", "Natural", "Sand", "Cocoa", "Mahogany"]
-    },
-    {
-      id: 103,
-      category: "foundation",
-      image: foundation4,
-      title: "Dewy Glow Foundation",
-      price: 46.0,
-      badge: "BESTSELLER" as const,
-      colors: ["#fff0e1", "#f4d5b4", "#deba94", "#c29764", "#9d7049"],
-      colorNames: ["Alabaster", "Cream", "Toffee", "Bronze", "Chestnut"]
-    },
-    {
-      id: 104,
-      category: "foundation",
-      image: foundation5,
-      title: "HD Coverage Foundation",
-      price: 50.0,
-      colors: ["#fef3e7", "#f0d0a9", "#ddb587", "#b98a5f", "#8d5736"],
-      colorNames: ["Vanilla", "Nude", "Sienna", "Amber", "Espresso"]
-    },
-
-    // BLUSH CATEGORY - 10 Products
-    {
-      id: 110,
-      category: "blush",
-      image: blush1,
-      title: "Liquid Blush - Soft Pink",
-      price: 28.0,
-      badge: "NEW" as const,
-      color: "#ffb6c1",
-      colorName: "Soft Pink"
-    },
-    {
-      id: 111,
-      category: "blush",
-      image: blush2,
-      title: "Powder Blush - Coral",
-      price: 26.0,
-      badge: "BESTSELLER" as const,
-      color: "#ff7f50",
-      colorName: "Coral Sunset"
-    },
-    {
-      id: 112,
-      category: "blush",
-      image: blush3,
-      title: "Cream Blush Stick - Peachy Rose",
-      price: 30.0,
-      color: "#ffcba4",
-      colorName: "Peachy Rose"
-    },
-    {
-      id: 113,
-      category: "blush",
-      image: blush4,
-      title: "Liquid Blush - Berry Pink",
-      price: 28.0,
-      color: "#dc143c",
-      colorName: "Berry Bliss"
-    },
-    {
-      id: 114,
-      category: "blush",
-      image: blush5,
-      title: "Powder Blush - Mauve",
-      price: 26.0,
-      color: "#dda0dd",
-      colorName: "Mauve Magic"
-    },
-    {
-      id: 115,
-      category: "blush",
-      image: blush6,
-      title: "Cream Blush - Nude Rose",
-      price: 29.0,
-      badge: "BESTSELLER" as const,
-      color: "#e6a8a8",
-      colorName: "Nude Rose"
-    },
-    {
-      id: 116,
-      category: "blush",
-      image: blush7,
-      title: "Liquid Blush - Apricot",
-      price: 28.0,
-      color: "#fbceb1",
-      colorName: "Apricot Glow"
-    },
-    {
-      id: 117,
-      category: "blush",
-      image: blush8,
-      title: "Powder Blush - Terracotta",
-      price: 26.0,
-      color: "#d2691e",
-      colorName: "Warm Terracotta"
-    },
-    {
-      id: 118,
-      category: "blush",
-      image: blush9,
-      title: "Cream Blush Stick - Fuchsia",
-      price: 30.0,
-      color: "#ff1493",
-      colorName: "Fuchsia Flash"
-    },
-    {
-      id: 119,
-      category: "blush",
-      image: blush10,
-      title: "Liquid Blush - Dusty Rose",
-      price: 28.0,
-      badge: "NEW" as const,
-      color: "#dcb4b4",
-      colorName: "Dusty Rose"
-    },
-
-    // CONCEALER CATEGORY - 10 Products
-    {
-      id: 120,
-      category: "concealer",
-      image: concealer1,
-      title: "Liquid Concealer - Fair",
-      price: 30.0,
-      badge: "BESTSELLER" as const,
-      colors: ["#fef5e7", "#f8e8d3", "#f1dbb9"],
-      colorNames: ["Fair", "Light Fair", "Medium Fair"]
-    },
-    {
-      id: 121,
-      category: "concealer",
-      image: concealer2,
-      title: "Cream Concealer Stick - Light",
-      price: 28.0,
-      colors: ["#f5d1b2", "#efc59e", "#e8b896"],
-      colorNames: ["Light", "Light Medium", "Medium Light"]
-    },
-    {
-      id: 122,
-      category: "concealer",
-      image: concealer3,
-      title: "Liquid Concealer - Medium",
-      price: 30.0,
-      badge: "NEW" as const,
-      colors: ["#d4a574", "#c89c68", "#bc9563"],
-      colorNames: ["Medium", "Medium Tan", "Medium Deep"]
-    },
-    {
-      id: 123,
-      category: "concealer",
-      image: concealer4,
-      title: "Concealer Palette - Multi Shade",
-      price: 35.0,
-      colors: ["#fef5e7", "#f1dbb9", "#d4a574", "#bc9563", "#8b5a3c"],
-      colorNames: ["Fair", "Light", "Medium", "Tan", "Deep"]
-    },
-    {
-      id: 124,
-      category: "concealer",
-      image: concealer5,
-      title: "Liquid Concealer - Tan",
-      price: 30.0,
-      colors: ["#c8965d", "#b8784d", "#a67c52"],
-      colorNames: ["Tan", "Rich Tan", "Deep Tan"]
-    },
-    {
-      id: 125,
-      category: "concealer",
-      image: concealer6,
-      title: "Cream Concealer - Caramel",
-      price: 28.0,
-      badge: "BESTSELLER" as const,
-      colors: ["#bc9563", "#a67c52", "#91633f"],
-      colorNames: ["Caramel", "Rich Caramel", "Deep Caramel"]
-    },
-    {
-      id: 126,
-      category: "concealer",
-      image: concealer7,
-      title: "Liquid Concealer - Deep",
-      price: 30.0,
-      colors: ["#8d5736", "#7a4729", "#66381c"],
-      colorNames: ["Deep", "Rich Deep", "Very Deep"]
-    },
-    {
-      id: 127,
-      category: "concealer",
-      image: concealer8,
-      title: "Brightening Concealer - Porcelain",
-      price: 32.0,
-      badge: "NEW" as const,
-      color: "#fff0e1",
-      colorName: "Porcelain"
-    },
-    {
-      id: 128,
-      category: "concealer",
-      image: concealer9,
-      title: "Color Correcting Concealer - Peach",
-      price: 28.0,
-      color: "#ffdab9",
-      colorName: "Peach Corrector"
-    },
-    {
-      id: 129,
-      category: "concealer",
-      image: concealer10,
-      title: "Full Coverage Concealer - Espresso",
-      price: 30.0,
-      colors: ["#8b5a3c", "#66381c", "#4a2511"],
-      colorNames: ["Espresso", "Rich Espresso", "Deep Espresso"]
-    },
-
-    // CONTOUR CATEGORY - 10 Products
-    {
-      id: 130,
-      category: "contour",
-      image: contour1,
-      title: "Cream Contour Stick - Light",
-      price: 32.0,
-      badge: "BESTSELLER" as const,
-      color: "#d2b48c",
-      colorName: "Light Brown"
-    },
-    {
-      id: 131,
-      category: "contour",
-      image: contour2,
-      title: "Powder Contour - Medium",
-      price: 28.0,
-      color: "#b8734d",
-      colorName: "Medium Brown"
-    },
-    {
-      id: 132,
-      category: "contour",
-      image: contour3,
-      title: "Cream Contour Palette",
-      price: 38.0,
-      badge: "NEW" as const,
-      colors: ["#d2b48c", "#c8965d", "#b8734d"],
-      colorNames: ["Light", "Medium", "Deep"]
-    },
-    {
-      id: 133,
-      category: "contour",
-      image: contour4,
-      title: "Liquid Contour - Taupe",
-      price: 30.0,
-      color: "#a0826d",
-      colorName: "Warm Taupe"
-    },
-    {
-      id: 134,
-      category: "contour",
-      image: contour5,
-      title: "Cream Contour Stick - Cool Brown",
-      price: 32.0,
-      color: "#8b7355",
-      colorName: "Cool Brown"
-    },
-    {
-      id: 135,
-      category: "contour",
-      image: contour6,
-      title: "Powder Contour Duo",
-      price: 35.0,
-      badge: "BESTSELLER" as const,
-      colors: ["#d2b48c", "#8b7355"],
-      colorNames: ["Contour", "Highlight"]
-    },
-    {
-      id: 136,
-      category: "contour",
-      image: contour7,
-      title: "Cream Contour - Deep",
-      price: 30.0,
-      color: "#6b4423",
-      colorName: "Deep Brown"
-    },
-    {
-      id: 137,
-      category: "contour",
-      image: contour8,
-      title: "Bronzer Contour Powder",
-      price: 28.0,
-      color: "#cd7f32",
-      colorName: "Golden Bronze"
-    },
-    {
-      id: 138,
-      category: "contour",
-      image: contour9,
-      title: "Sculpting Contour Stick",
-      price: 32.0,
-      badge: "NEW" as const,
-      color: "#8b7d6b",
-      colorName: "Ash Brown"
-    },
-    {
-      id: 139,
-      category: "contour",
-      image: contour10,
-      title: "Contour & Highlight Duo",
-      price: 36.0,
-      colors: ["#b8734d", "#fef5e7"],
-      colorNames: ["Contour", "Highlight"]
-    },
-
-    // EYELINER CATEGORY - 10 Products
-    {
-      id: 140,
-      category: "eyeliner",
-      image: eyeliner1,
-      title: "Precision Liquid Eyeliner - Black",
-      price: 22.0,
-      badge: "BESTSELLER" as const,
-      color: "#000000",
-      colorName: "Jet Black"
-    },
-    {
-      id: 141,
-      category: "eyeliner",
-      image: eyeliner2,
-      title: "Gel Eyeliner Pot - Brown",
-      price: 20.0,
-      color: "#654321",
-      colorName: "Chocolate Brown"
-    },
-    {
-      id: 142,
-      category: "eyeliner",
-      image: eyeliner3,
-      title: "Eyeliner Pencil - Navy Blue",
-      price: 18.0,
-      badge: "NEW" as const,
-      color: "#000080",
-      colorName: "Navy Blue"
-    },
-    {
-      id: 143,
-      category: "eyeliner",
-      image: eyeliner4,
-      title: "Liquid Eyeliner - Emerald Green",
-      price: 22.0,
-      color: "#50c878",
-      colorName: "Emerald"
-    },
-    {
-      id: 144,
-      category: "eyeliner",
-      image: eyeliner5,
-      title: "Glitter Eyeliner - Purple",
-      price: 24.0,
-      badge: "NEW" as const,
-      color: "#9370db",
-      colorName: "Purple Glitter"
-    },
-    {
-      id: 145,
-      category: "eyeliner",
-      image: eyeliner6,
-      title: "Twist-Up Eyeliner - Charcoal",
-      price: 19.0,
-      color: "#36454f",
-      colorName: "Charcoal Grey"
-    },
-    {
-      id: 146,
-      category: "eyeliner",
-      image: eyeliner7,
-      title: "Felt-Tip Eyeliner - Burgundy",
-      price: 22.0,
-      color: "#800020",
-      colorName: "Burgundy Wine"
-    },
-    {
-      id: 147,
-      category: "eyeliner",
-      image: eyeliner8,
-      title: "Waterline Eyeliner - White",
-      price: 18.0,
-      badge: "BESTSELLER" as const,
-      color: "#ffffff",
-      colorName: "Bright White"
-    },
-    {
-      id: 148,
-      category: "eyeliner",
-      image: eyeliner9,
-      title: "Metallic Liquid Eyeliner - Copper",
-      price: 24.0,
-      color: "#b87333",
-      colorName: "Copper"
-    },
-    {
-      id: 149,
-      category: "eyeliner",
-      image: eyeliner10,
-      title: "Dual-Ended Eyeliner - Black & Brown",
-      price: 26.0,
-      colors: ["#000000", "#654321"],
-      colorNames: ["Black", "Brown"]
-    },
-
-
-
     // EYES CATEGORY - Original Products
     {
       id: 1,
@@ -724,13 +233,32 @@ const Index = () => {
       colorNames: ["Champagne", "Copper", "Olive", "Charcoal"]
     },
 
-    // FACE CATEGORY - Other Products
+    // FACE CATEGORY
+    {
+      id: 6,
+      category: "foundation",
+      image: faceFoundation,
+      title: "Changing Foundation",
+      price: 39.0,
+      badge: "BESTSELLER" as const,
+      color: "#f5d1b2",
+      colorName: "Beige"
+    },
     {
       id: 7,
       category: "face",
       image: facePrimer,
       title: "Velvet Skin Primer",
       price: 32.0
+    },
+    {
+      id: 8,
+      category: "concealer",
+      image: faceConcealer,
+      title: "Universal Concealer",
+      price: 30.0,
+      color: "#f1c27d",
+      colorName: "Light Beige"
     },
     {
       id: 9,
@@ -746,11 +274,19 @@ const Index = () => {
       title: "2-in-1 Build & Conceal Brush",
       price: 25.0
     },
+    {
+      id: 11,
+      category: "foundation",
+      image: faceFoundation,
+      title: "Mini Changing Foundation",
+      price: 22.0,
+      color: "#f5d1b2",
+      colorName: "Beige"
+    },
 
     // LIPS CATEGORY
     {
       id: 12,
-      section: "lips",
       category: "lipstick",
       image: lipsLipstick,
       title: "Velvet Dream Lipstick",
@@ -760,7 +296,6 @@ const Index = () => {
     },
     {
       id: 13,
-      section: "lips",
       category: "lipstick",
       image: lipsBlush,
       title: "Vibrant Cheeks Liquid Blush",
@@ -770,7 +305,6 @@ const Index = () => {
     },
     {
       id: 14,
-      section: "lips",
       category: "lipstick",
       image: lipsLipPencil,
       title: "Signature Lip Pencil",
@@ -780,7 +314,6 @@ const Index = () => {
     },
     {
       id: 30,
-      section: "lips",
       category: "lipstick",
       image: lipstick9,
       title: "Matte Lipstick - Fuchsia Flash",
@@ -790,7 +323,6 @@ const Index = () => {
     },
     {
       id: 15,
-      section: "lips",
       category: "lipstick",
       image: lipsLipGloss,
       title: "Plush Lip Gloss",
@@ -800,7 +332,6 @@ const Index = () => {
     },
     {
       id: 16,
-      section: "lips",
       category: "lipstick",
       image: lipsLipBalm,
       title: "Nourishing Lip Balm",
@@ -808,7 +339,6 @@ const Index = () => {
     },
     {
       id: 22,
-      section: "lips",
       category: "lipstick",
       image: lipstick1,
       title: "Matte Lipstick - Crimson Red",
@@ -818,7 +348,6 @@ const Index = () => {
     },
     {
       id: 23,
-      section: "lips",
       category: "lipstick",
       image: lipstick2,
       title: "Matte Lipstick - Berry Pink",
@@ -828,7 +357,6 @@ const Index = () => {
     },
     {
       id: 25,
-      section: "lips",
       category: "lipstick",
       image: lipstick4,
       title: "Matte Lipstick - Coral Crush",
@@ -838,7 +366,6 @@ const Index = () => {
     },
     {
       id: 24,
-      section: "lips",
       category: "lipstick",
       image: lipstick3,
       title: "Matte Lipstick - Soft Rose",
@@ -848,7 +375,6 @@ const Index = () => {
     },
     {
       id: 26,
-      section: "lips",
       category: "lipstick",
       image: lipstick5,
       title: "Matte Lipstick - Plum Passion",
@@ -858,7 +384,6 @@ const Index = () => {
     },
     {
       id: 27,
-      section: "lips",
       category: "lipstick",
       image: lipstick6,
       title: "Matte Lipstick - Ruby Red",
@@ -868,7 +393,6 @@ const Index = () => {
     },
     {
       id: 28,
-      section: "lips",
       category: "lipstick",
       image: lipstick7,
       title: "Matte Lipstick - Nude Beige",
@@ -878,7 +402,6 @@ const Index = () => {
     },
     {
       id: 29,
-      section: "lips",
       category: "lipstick",
       image: lipstick8,
       title: "Matte Lipstick - Chocolate Brown",
@@ -888,7 +411,6 @@ const Index = () => {
     },
     {
       id: 31,
-      section: "lips",
       category: "lipstick",
       image: lipstick10,
       title: "Matte Lipstick - Tangerine Tango",
@@ -900,7 +422,7 @@ const Index = () => {
     // SETS CATEGORY
     {
       id: 17,
-      section: "sets",
+      category: "sets",
       image: eyesBrowDuo,
       title: "The Brow Defining Duo",
       price: 41.0,
@@ -945,9 +467,9 @@ const Index = () => {
     }
   ];
 
-  const filteredProducts = selectedSection === "all"
+  const filteredProducts = selectedCategory === "all"
     ? products
-    : products.filter(product => product.section === selectedSection);
+    : products.filter(product => product.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-background">
@@ -964,39 +486,39 @@ const Index = () => {
         {/* Category Circles */}
         <section className="container mx-auto px-4 pb-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div onClick={() => setSelectedSection("face")}>
+            <div onClick={() => setSelectedCategory("foundation")}>
               <CategoryCircle
-                image={styleFace}
+                image={categoryFace}
                 title="Face"
                 href="#face"
               />
             </div>
-            <div onClick={() => setSelectedSection("lips")}>
+            <div onClick={() => setSelectedCategory("lipstick")}>
               <CategoryCircle
-                image={styleLips}
+                image={categoryLips}
                 title="Lips & Cheeks"
                 href="#lips"
               />
             </div>
-            <div onClick={() => setSelectedSection("eyeshadow")}>
+            <div onClick={() => setSelectedCategory("eyeshadow")}>
               <CategoryCircle
-                image={styleEyes}
+                image={categoryEyes}
                 title="Eyes"
                 href="#eyes"
               />
             </div>
-            <div onClick={() => setSelectedSection("sets")}>
+            <div onClick={() => setSelectedCategory("sets")}>
               <CategoryCircle
-                image={styleSets}
+                image={categorySets}
                 title="Bundles & Sets"
                 href="#sets"
               />
             </div>
           </div>
-          {selectedSection !== "all" && (
+          {selectedCategory !== "all" && (
             <div className="text-center mt-8">
               <button
-                onClick={() => setSelectedSection("all")}
+                onClick={() => setSelectedCategory("all")}
                 className="text-sm font-medium text-accent hover:underline"
               >
                 View All Products
